@@ -46,6 +46,7 @@ func (sa *syscallAggregator) start() {
 			select {
 			case <-sa.ticker.C:
 				sa.emitJSON()
+				sa.counts = make(map[string]int)
 			case <-sa.stopSignal:
 				sa.ticker.Stop()
 				return
@@ -122,7 +123,7 @@ func do(sa *syscallAggregator) error {
 }
 
 func main() {
-	aggregator := newSyscallAggregator(5 * time.Second)
+	aggregator := newSyscallAggregator(5 * time.Minute)
 	aggregator.start()
 	defer aggregator.stop()
 
