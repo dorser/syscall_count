@@ -1,0 +1,11 @@
+name: syscall_count
+description: Counts syscalls
+homepageURL: 'TODO: Fill the gadget homepage URL'
+documentationURL: 'TODO: Fill the gadget documentation URL'
+sourceURL: 'TODO: Fill the gadget source code URL'
+datasources:
+  syscall_count:
+    fields:
+      syscall_nr:
+        annotations:
+          description: 'TODO: Fill field description'
