@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"encoding/json"
+	"flag"
 	"fmt"
 	"os"
 	"sync"
@@ -22,6 +23,10 @@ import (
 	gadgetcontext "github.com/inspektor-gadget/inspektor-gadget/pkg/gadget-context"
 
 	"github.com/inspektor-gadget/inspektor-gadget/pkg/runtime/local"
+)
+
+const (
+	defaultSamplingInterval = "300s"
 )
 
 type syscallAggregator struct {
@@ -130,7 +135,15 @@ func do(sa *syscallAggregator) error {
 }
 
 func main() {
-	aggregator := newSyscallAggregator(5 * time.Minute)
+	samplingIntervalStr := flag.String("interval", defaultSamplingInterval, "The sampling interval (e.g., 10s) (default: 300s)")
+	flag.Parse()
+	samplingInterval, err := time.ParseDuration(*samplingIntervalStr)
+	if err != nil {
+		fmt.Printf("Error parsing sampling interval: %v\n", err)
+		return
+	}
+
+	aggregator := newSyscallAggregator(samplingInterval)
 	aggregator.start()
 	defer aggregator.stop()
 
