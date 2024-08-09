@@ -11,8 +11,14 @@ build-gadget:
 		-t $(CONTAINER_REPO):$(IMAGE_TAG) \
 		--update-metadata gadget/
 
+.PHONY: export-gadget
+export-gadget:
+	sudo -E ig image export \
+		$(CONTAINER_REPO):$(IMAGE_TAG) \
+		$(CONTAINER_REPO).tar
+	
 .PHONY: build
-build: build-gadget
+build: build-gadget export-gadget
 	go build .
 
 .PHONY: run

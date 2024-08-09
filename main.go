@@ -10,6 +10,7 @@ import (
 
 	"github.com/inspektor-gadget/inspektor-gadget/pkg/operators"
 	ocihandler "github.com/inspektor-gadget/inspektor-gadget/pkg/operators/oci-handler"
+	orasoci "oras.land/oras-go/v2/content/oci"
 
 	_ "github.com/inspektor-gadget/inspektor-gadget/pkg/operators/ebpf"
 
@@ -96,6 +97,11 @@ func do(sa *syscallAggregator) error {
 		return nil
 	}))
 
+	ociStore, err := orasoci.NewFromTar(context.Background(), "syscall_count.tar")
+	if err != nil {
+		return fmt.Errorf("getting oci store from bundle: %w", err)
+	}
+
 	gadgetCtx := gadgetcontext.New(
 		context.Background(),
 		"syscall_count:latest",
@@ -103,6 +109,7 @@ func do(sa *syscallAggregator) error {
 			ocihandler.OciHandler, // pass singleton instance of the oci-handler
 			syscallCountOperator,
 		),
+		gadgetcontext.WithOrasReadonlyTarget(ociStore),
 	)
 
 	runtime := local.New()
