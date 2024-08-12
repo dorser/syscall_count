@@ -9,13 +9,21 @@ export IG_EXPERIMENTAL = true
 build-gadget:
 	sudo -E ig image build \
 		-t $(CONTAINER_REPO):$(IMAGE_TAG) \
-		--update-metadata gadget/
+		gadget/
 
 .PHONY: export-gadget
 export-gadget:
 	sudo -E ig image export \
 		$(CONTAINER_REPO):$(IMAGE_TAG) \
 		$(CONTAINER_REPO).tar
+	
+.PHONY: generate-syscall-compat
+generate-syscall-compat:
+	mkdir -p ./gadget/syscalls
+	docker run --rm -v ./gadget/syscalls:/libs/driver falcosecurity/syscalls-bumper:latest
+	mv ./gadget/syscalls/syscall_compat_x86_64.h ./gadget/syscall_compat_x86_64.h
+	mv ./gadget/syscalls/syscall_compat_aarch64.h ./gadget/syscall_compat_aarch64.h
+	rm -rf ./gadget/syscalls
 	
 .PHONY: build
 build: build-gadget export-gadget

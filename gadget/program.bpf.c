@@ -12,7 +12,7 @@
 #include <gadget/mntns_filter.h>
 #include <gadget/types.h>
 
-#include "syscall_compat_x86_64.h"
+#include "syscall_compat.h"
 
 struct event {
   int syscall_nr;
