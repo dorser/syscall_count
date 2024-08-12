@@ -3,20 +3,12 @@ CONTAINER_REPO ?= syscall_count
 IMAGE_TAG ?= $(TAG)
 CLANG_FORMAT ?= clang-format
 
-export IG_EXPERIMENTAL = true
-
 .PHONY: build-gadget
 build-gadget:
 	sudo -E ig image build \
 		-t $(CONTAINER_REPO):$(IMAGE_TAG) \
-		gadget/
+		--update-metadata gadget/
 
-.PHONY: export-gadget
-export-gadget:
-	sudo -E ig image export \
-		$(CONTAINER_REPO):$(IMAGE_TAG) \
-		$(CONTAINER_REPO).tar
-	
 .PHONY: generate-syscall-compat
 generate-syscall-compat:
 	mkdir -p ./gadget/syscalls
@@ -26,20 +18,10 @@ generate-syscall-compat:
 	rm -rf ./gadget/syscalls
 	
 .PHONY: build
-build: build-gadget export-gadget
-	go build .
-
+build: build-gadget
+	
 .PHONY: run
-run:
-	sudo ./syscall_count
-
-.PHONY: fmt
-fmt:
-	go fmt ./...
-
-.PHONY: lint
-golint:
-	golint ./...
+run: run-gadget
 
 .PHONY: run-gadget
 run-gadget:

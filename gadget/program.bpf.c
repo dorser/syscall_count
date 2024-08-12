@@ -14,40 +14,50 @@
 
 #include "syscall_compat.h"
 
-struct event {
-  int syscall_nr;
+#define MAX_ENTRIES 1024
+
+struct syscall_id {
+  gadget_syscall syscall_nr;
 };
 
-GADGET_TRACER_MAP(events, 1024 * 256);
+struct syscall_count {
+  int count;
+};
 
-GADGET_TRACER(syscall_count, events, event);
+static struct syscall_count zero_value = {0};
 
-static __always_inline bool should_filter_out_syscall(u64 syscall_nr) {
-  // return syscall_nr != __NR_execve && __NR_openat;
-  return false;
-}
+struct {
+  __uint(type, BPF_MAP_TYPE_HASH);
+  __uint(max_entries, MAX_ENTRIES);
+  __type(key, struct syscall_id);
+  __type(value, struct syscall_count);
+} counts SEC(".maps");
+
+GADGET_MAPITER(syscall_count, counts);
 
 SEC("raw_tracepoint/sys_enter")
 int tracepoint__sys_enter(struct bpf_raw_tracepoint_args *ctx) {
-  int syscall_nr;
   __u64 mntns_id;
-  struct event *event;
+  int syscall_nr;
+  struct syscall_id key = {};
+  struct syscall_count *valuep;
 
   syscall_nr = ctx->args[1];
-  if (should_filter_out_syscall(syscall_nr))
-    return 0;
 
   mntns_id = gadget_get_mntns_id();
   if (gadget_should_discard_mntns_id(mntns_id))
     return 0;
 
-  event = gadget_reserve_buf(&events, sizeof(*event));
-  if (!event)
-    return 0;
+  key.syscall_nr = syscall_nr;
 
-  event->syscall_nr = syscall_nr;
-
-  gadget_submit_buf(ctx, &events, event, sizeof(*event));
+  valuep = bpf_map_lookup_elem(&counts, &key);
+  if (!valuep) {
+    bpf_map_update_elem(&counts, &key, &zero_value, BPF_NOEXIST);
+    valuep = bpf_map_lookup_elem(&counts, &key);
+    if (!valuep)
+      return 0;
+  }
+  valuep->count++;
 
   return 0;
 }

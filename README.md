@@ -9,14 +9,14 @@ make build
 
 Run:
 ```
-make run
+PARAMS="--verify-image=false --map-fetch-interval 5s -o json" make run
 ```
 
 Output:
 Emits the number of calls for each syscall in a given time period. For example:
 ```
-{"accept4":3,"access":16,"arch_prctl":24}    
-{"getsockopt":58,"gettid":22,"getuid":5,"ioctl":52,"ioprio_get":2}   
+[{"count":1,"syscall_nr":231},{"count":5,"syscall_nr":0},{"count":1,"syscall_nr":109}]
+[{"count":2,"syscall_nr":14},{"count":7,"syscall_nr":1},{"count":6,"syscall_nr":13}]
 ```
 ## License
 
