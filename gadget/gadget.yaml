@@ -9,6 +9,6 @@ datasources:
       count:
         annotations:
           description: 'TODO: Fill field description'
-      syscall_nr:
+      syscall_raw:
         annotations:
           description: 'TODO: Fill field description'

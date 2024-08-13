@@ -12,12 +12,10 @@
 #include <gadget/mntns_filter.h>
 #include <gadget/types.h>
 
-#include "syscall_compat.h"
-
 #define MAX_ENTRIES 1024
 
 struct syscall_id {
-  gadget_syscall syscall_nr;
+  gadget_syscall syscall_raw;
 };
 
 struct syscall_count {
@@ -48,7 +46,7 @@ int tracepoint__sys_enter(struct bpf_raw_tracepoint_args *ctx) {
   if (gadget_should_discard_mntns_id(mntns_id))
     return 0;
 
-  key.syscall_nr = syscall_nr;
+  key.syscall_raw = syscall_nr;
 
   valuep = bpf_map_lookup_elem(&counts, &key);
   if (!valuep) {
