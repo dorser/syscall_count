@@ -29,4 +29,4 @@ run-gadget:
 
 .PHONY: clang-format
 clang-format:
-	$(CLANG_FORMAT) -i gadget/program.bpf.c
+	find gadget/ -name '*.c' -o -name '*.h' | xargs $(CLANG_FORMAT)  -i

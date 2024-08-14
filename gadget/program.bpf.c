@@ -7,19 +7,20 @@
 #include <bpf/bpf_helpers.h>
 #include <bpf/bpf_tracing.h>
 
-#include <gadget/buffer.h>
 #include <gadget/macros.h>
 #include <gadget/mntns_filter.h>
 #include <gadget/types.h>
 
-#define MAX_ENTRIES 1024
+#include "syscall_count.h"
+
+bool filters_init = false;
 
 struct syscall_id {
   gadget_syscall syscall_raw;
 };
 
 struct syscall_count {
-  int count;
+  __u64 count;
 };
 
 static struct syscall_count zero_value = {0};
@@ -33,10 +34,19 @@ struct {
 
 GADGET_MAPITER(syscall_count, counts);
 
+static __always_inline bool should_trace_syscall(__u64 syscall_nr) {
+  if (!filters_init) {
+    init_syscall_filters_map();
+    filters_init = true;
+  }
+
+  return bpf_map_lookup_elem(&syscall_filters, &syscall_nr) != NULL;
+}
+
 SEC("raw_tracepoint/sys_enter")
 int tracepoint__sys_enter(struct bpf_raw_tracepoint_args *ctx) {
   __u64 mntns_id;
-  int syscall_nr;
+  __u64 syscall_nr;
   struct syscall_id key = {};
   struct syscall_count *valuep;
 
@@ -44,6 +54,9 @@ int tracepoint__sys_enter(struct bpf_raw_tracepoint_args *ctx) {
 
   mntns_id = gadget_get_mntns_id();
   if (gadget_should_discard_mntns_id(mntns_id))
+    return 0;
+
+  if (!should_trace_syscall(syscall_nr))
     return 0;
 
   key.syscall_raw = syscall_nr;

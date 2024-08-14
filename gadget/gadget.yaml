@@ -12,3 +12,552 @@ datasources:
       syscall_raw:
         annotations:
           description: 'TODO: Fill field description'
+ebpfParams:
+  trace_accept:
+    key: trace_accept
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_accept4:
+    key: trace_accept4
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_access:
+    key: trace_access
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_all:
+    key: trace_all
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_bind:
+    key: trace_bind
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_bpf:
+    key: trace_bpf
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_brk:
+    key: trace_brk
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_capset:
+    key: trace_capset
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_chdir:
+    key: trace_chdir
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_chmod:
+    key: trace_chmod
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_chown:
+    key: trace_chown
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_chroot:
+    key: trace_chroot
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_clone:
+    key: trace_clone
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_clone3:
+    key: trace_clone3
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_close:
+    key: trace_close
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_connect:
+    key: trace_connect
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_copy_file_range:
+    key: trace_copy_file_range
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_creat:
+    key: trace_creat
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_dup:
+    key: trace_dup
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_dup2:
+    key: trace_dup2
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_dup3:
+    key: trace_dup3
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_epoll_create:
+    key: trace_epoll_create
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_epoll_create1:
+    key: trace_epoll_create1
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_epoll_wait:
+    key: trace_epoll_wait
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_eventfd:
+    key: trace_eventfd
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_eventfd2:
+    key: trace_eventfd2
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_execve:
+    key: trace_execve
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_execveat:
+    key: trace_execveat
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_fchdir:
+    key: trace_fchdir
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_fchmod:
+    key: trace_fchmod
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_fchmodat:
+    key: trace_fchmodat
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_fchown:
+    key: trace_fchown
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_fchownat:
+    key: trace_fchownat
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_fcntl:
+    key: trace_fcntl
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_flock:
+    key: trace_flock
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_fork:
+    key: trace_fork
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_fsconfig:
+    key: trace_fsconfig
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_fstat:
+    key: trace_fstat
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_futex:
+    key: trace_futex
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_getcwd:
+    key: trace_getcwd
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_getdents:
+    key: trace_getdents
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_getdents64:
+    key: trace_getdents64
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_getegid:
+    key: trace_getegid
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_geteuid:
+    key: trace_geteuid
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_getgid:
+    key: trace_getgid
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_getpeername:
+    key: trace_getpeername
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_getresgid:
+    key: trace_getresgid
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_getresuid:
+    key: trace_getresuid
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_getrlimit:
+    key: trace_getrlimit
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_getsockname:
+    key: trace_getsockname
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_getsockopt:
+    key: trace_getsockopt
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_getuid:
+    key: trace_getuid
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_inotify_init:
+    key: trace_inotify_init
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_inotify_init1:
+    key: trace_inotify_init1
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_io_uring_enter:
+    key: trace_io_uring_enter
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_io_uring_register:
+    key: trace_io_uring_register
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_io_uring_setup:
+    key: trace_io_uring_setup
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_ioctl:
+    key: trace_ioctl
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_kill:
+    key: trace_kill
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_lchown:
+    key: trace_lchown
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_link:
+    key: trace_link
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_linkat:
+    key: trace_linkat
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_listen:
+    key: trace_listen
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_lseek:
+    key: trace_lseek
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_lstat:
+    key: trace_lstat
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_mkdir:
+    key: trace_mkdir
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_mkdirat:
+    key: trace_mkdirat
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_mlock:
+    key: trace_mlock
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_mlock2:
+    key: trace_mlock2
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_mlockall:
+    key: trace_mlockall
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_mmap:
+    key: trace_mmap
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_mount:
+    key: trace_mount
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_mprotect:
+    key: trace_mprotect
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_munlock:
+    key: trace_munlock
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_munlockall:
+    key: trace_munlockall
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_munmap:
+    key: trace_munmap
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_nanosleep:
+    key: trace_nanosleep
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_open:
+    key: trace_open
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_open_by_handle_at:
+    key: trace_open_by_handle_at
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_openat:
+    key: trace_openat
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_openat2:
+    key: trace_openat2
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_pipe:
+    key: trace_pipe
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_pipe2:
+    key: trace_pipe2
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_poll:
+    key: trace_poll
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_ppoll:
+    key: trace_ppoll
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_prctl:
+    key: trace_prctl
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_preadv:
+    key: trace_preadv
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_ptrace:
+    key: trace_ptrace
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_pwritev:
+    key: trace_pwritev
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_quotactl:
+    key: trace_quotactl
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_read:
+    key: trace_read
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_readv:
+    key: trace_readv
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_recvfrom:
+    key: trace_recvfrom
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_recvmmsg:
+    key: trace_recvmmsg
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_recvmsg:
+    key: trace_recvmsg
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_rename:
+    key: trace_rename
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_renameat:
+    key: trace_renameat
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_renameat2:
+    key: trace_renameat2
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_rmdir:
+    key: trace_rmdir
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_seccomp:
+    key: trace_seccomp
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_select:
+    key: trace_select
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_semctl:
+    key: trace_semctl
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_semget:
+    key: trace_semget
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_semop:
+    key: trace_semop
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_sendfile:
+    key: trace_sendfile
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_sendmmsg:
+    key: trace_sendmmsg
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_sendmsg:
+    key: trace_sendmsg
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_sendto:
+    key: trace_sendto
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_setgid:
+    key: trace_setgid
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_setns:
+    key: trace_setns
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_setpgid:
+    key: trace_setpgid
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_setresgid:
+    key: trace_setresgid
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_setresuid:
+    key: trace_setresuid
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_setrlimit:
+    key: trace_setrlimit
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_setsid:
+    key: trace_setsid
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_setsockopt:
+    key: trace_setsockopt
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_setuid:
+    key: trace_setuid
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_shutdown:
+    key: trace_shutdown
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_signalfd:
+    key: trace_signalfd
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_signalfd4:
+    key: trace_signalfd4
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_socket:
+    key: trace_socket
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_socketpair:
+    key: trace_socketpair
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_splice:
+    key: trace_splice
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_stat:
+    key: trace_stat
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_symlink:
+    key: trace_symlink
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_symlinkat:
+    key: trace_symlinkat
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_tgkill:
+    key: trace_tgkill
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_timerfd_create:
+    key: trace_timerfd_create
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_tkill:
+    key: trace_tkill
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_umount2:
+    key: trace_umount2
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_unlink:
+    key: trace_unlink
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_unlinkat:
+    key: trace_unlinkat
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_unshare:
+    key: trace_unshare
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_userfaultfd:
+    key: trace_userfaultfd
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_vfork:
+    key: trace_vfork
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_write:
+    key: trace_write
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
+  trace_writev:
+    key: trace_writev
+    defaultValue: ""
+    description: 'TODO: Fill parameter description'
