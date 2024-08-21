@@ -61,14 +61,12 @@ int tracepoint__sys_enter(struct bpf_raw_tracepoint_args *ctx) {
 
   key.syscall_raw = syscall_nr;
 
+  bpf_map_update_elem(&counts, &key, &zero_value, BPF_NOEXIST);
   valuep = bpf_map_lookup_elem(&counts, &key);
-  if (!valuep) {
-    bpf_map_update_elem(&counts, &key, &zero_value, BPF_NOEXIST);
-    valuep = bpf_map_lookup_elem(&counts, &key);
-    if (!valuep)
-      return 0;
-  }
-  valuep->count++;
+  if (!valuep) 
+    return 0;
+  
+  __atomic_add_fetch(&valuep->count, 1, __ATOMIC_RELAXED);
 
   return 0;
 }
