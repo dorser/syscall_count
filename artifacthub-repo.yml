@@ -1,0 +1,8 @@
+# Artifact Hub repository metadata file
+# https://github.com/artifacthub/hub/blob/master/docs/metadata/artifacthub-repo.yml
+
+repositoryID: e1910f21-db0f-447b-a742-8b109b590f70
+owners:
+  - name: Dor Serero
+    email: dor.serero@gmail.com
+

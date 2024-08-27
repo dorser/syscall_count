@@ -1,5 +1,5 @@
 TAG := latest
-CONTAINER_REPO ?= syscall_count
+CONTAINER_REPO ?= ghcr.io/dorser/syscall-count
 IMAGE_TAG ?= $(TAG)
 CLANG_FORMAT ?= clang-format
 

@@ -1,0 +1,29 @@
+# Artifact Hub package metadata file
+version: 0.1.0
+name: "syscall-count"
+category: monitoring-logging
+displayName: "syscall-count"
+createdAt: "2024-08-27T00:00:00+00:00"
+description: "Collect count metrics for selected syscalls called within containers"
+logoURL: "https://inspektor-gadget.io/media/brand-icon.svg"
+license: ""
+homeURL: "https://github.com/dorser/syscall_count"
+containersImages:
+    - name: gadget
+      image: "ghcr.io/dorser/syscall-count:latest"
+      platforms:
+        - linux/amd64
+        - linux/arm64
+keywords:
+    - gadget
+links:
+    - name: source
+      url: "https://github.com/dorser/syscall_count"
+install: |
+    # Run
+    ```bash
+    sudo ig run ghcr.io/dorser/syscall-count:latest
+    ```
+provider:
+    name: Inspektor Gadget
+
