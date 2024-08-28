@@ -8,8 +8,13 @@ make build
 ```
 
 **Run**
+Json output:
 ```
-PARAMS="--trace_all=true --verify-image=false --map-fetch-interval 5s -o json" make run
+sudo ig run ghcr.io/dorser/syscall-count:latest --trace_all=true --verify-image=false --map-fetch-interval 5s -o json
+```
+Column output:
+```
+sudo ig run ghcr.io/dorser/syscall-count:latest --trace_all=true --verify-image=false --map-fetch-interval 5s --sort=count
 ```
 
 **Output**
