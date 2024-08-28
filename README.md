@@ -8,7 +8,8 @@ make build
 ```
 
 **Run**
-Json output:
+
+JSON output:
 ```
 sudo ig run ghcr.io/dorser/syscall-count:latest --trace_all=true --verify-image=false --map-fetch-interval 5s -o json
 ```
@@ -18,13 +19,15 @@ sudo ig run ghcr.io/dorser/syscall-count:latest --trace_all=true --verify-image=
 ```
 
 **Output**
+
 Emits the number of calls for each syscall in a given time period. For example:
 ```
 [{"count":3,"syscall":"SYS_EXECVE","syscall_raw":59},{"count":34,"syscall":"SYS_OPENAT","syscall_raw":257}]
-[]{"count":2,"syscall":"SYS_SETGID","syscall_raw":106},{"count":1,"syscall":"SYS_SETSID","syscall_raw":112}]
+[{"count":2,"syscall":"SYS_SETGID","syscall_raw":106},{"count":1,"syscall":"SYS_SETSID","syscall_raw":112}]
 ```
 
 **Tracing and Filtering**
+
 This gadget collects a selected list of syscalls. By default, the gadget doesn't trace any syscall.
 To trace all selected syscalls pass the `--trace_all=true` flag when running the gadget.
 
