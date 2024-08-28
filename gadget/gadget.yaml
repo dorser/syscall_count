@@ -8,10 +8,16 @@ datasources:
     fields:
       count:
         annotations:
-          description: 'TODO: Fill field description'
+          columns.maxwidth: "10"
+          columns.width: "8"
+          description: Count of system calls in the time period
+      syscall:
+        annotations:
+          columns.width: "20"
+          description: Name of the system call
       syscall_raw:
         annotations:
-          description: 'TODO: Fill field description'
+          columns.hidden: "true"
 ebpfParams:
   trace_accept:
     key: trace_accept
