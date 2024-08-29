@@ -3,7 +3,8 @@ version: 0.1.0
 name: "syscall-count"
 category: monitoring-logging
 displayName: "syscall-count"
-createdAt: "2024-08-27T00:00:00+00:00"
+createdAt: "2024-08-29T11:57:00Z"
+digest: "2024-08-29T11:57:00Z"
 description: "Collect count metrics for selected syscalls called within containers"
 logoURL: "https://inspektor-gadget.io/media/brand-icon.svg"
 license: ""
