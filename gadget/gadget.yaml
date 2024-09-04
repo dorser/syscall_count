@@ -5,6 +5,8 @@ documentationURL: 'TODO: Fill the gadget documentation URL'
 sourceURL: 'TODO: Fill the gadget source code URL'
 datasources:
   syscall_count:
+    annotations:
+      cli.clear-screen-before: "true"
     fields:
       count:
         annotations:
